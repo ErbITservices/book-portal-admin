@@ -33,29 +33,32 @@ function Dashboard() {
           <Navbar />
           <div className="dashboard-main-container">
             <Slidebar />
-            <div className="card-container">
-              <div className="info-cards">
-                <h2> Total Active Schemes </h2>
-                <h2>
-                  <BackupTableOutlinedIcon />
-                  {numberofscheme}
-                </h2>
+            <center>
+              <div className="card-container">
+                <div className="info-cards">
+                  <h2> Total Active Schemes </h2>
+                  <h2>
+                    <BackupTableOutlinedIcon />
+                    {numberofscheme}
+                    {console.log(numberofscheme)}
+                  </h2>
+                </div>
+                <div className="info-cards">
+                  <h2> Users </h2>
+                  <h2>
+                    <PermIdentityOutlinedIcon />
+                    {numberofuser}
+                  </h2>
+                </div>
+                <div className="info-cards">
+                  <h2> Total Books </h2>
+                  <h2>
+                    <ImportContactsOutlinedIcon />
+                    {numberofbook}
+                  </h2>
+                </div>
               </div>
-              <div className="info-cards">
-                <h2> Users </h2>
-                <h2>
-                  <PermIdentityOutlinedIcon />
-                  {numberofuser}
-                </h2>
-              </div>
-              <div className="info-cards">
-                <h2> Total Books </h2>
-                <h2>
-                  <ImportContactsOutlinedIcon />
-                  {numberofbook}
-                </h2>
-              </div>
-            </div>
+            </center>
           </div>
 
           <Footer />
