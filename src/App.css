@@ -286,17 +286,25 @@ tbody , tr{
   height: fit-content;
 }
 td{
-  
-  border: 1.5px solid black;
   height: fit-content;
+  font-weight: 300;
+  font-size: 15px;
 }
 th{
   background-color: #4ca9f6e2;
   font-weight: 500;
-  border-radius: 5px;
-  border: 1.5px solid black;
+  /* border-radius: 5px; */
 }
-
+table ,td , th{
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+.delete{
+  background-color: red;
+}
+.edit{
+  background-color: green;
+}
 .image{
   width: 50px;
   height: 50px;

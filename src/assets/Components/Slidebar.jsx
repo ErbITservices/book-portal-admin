@@ -39,7 +39,7 @@ function Slidebar({ hideslidebar }) {
         </div>
 
         <ul>
-          <Link to="/Dashboard" style={{ textDecoration: "none" }}>
+          <Link to="/" style={{ textDecoration: "none" }}>
             <li>
               <GridViewOutlinedIcon /> Dashboard
             </li>

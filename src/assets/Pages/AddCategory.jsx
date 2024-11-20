@@ -52,6 +52,17 @@ useEffect(() => {
       alert("Category Name Must Be Unique");
     }
   }
+  async function handledelete(id) {
+    try {
+      const res1 = await userRequest.delete(`/api/v1/CategoryName/deleteCategoryName/${id}`);
+      setcategorylist(res1.data.Category);
+      
+    } catch (error) {
+      console.log(error);
+    }
+    const res2 = await userRequest.get(`/api/v1/CategoryName/getCategoryName`);
+      setcategorylist(res2.data.Category);
+  }
   return (
     <>
       <div className="dashboard-container">
@@ -88,7 +99,7 @@ useEffect(() => {
                       {categorylist?.map((i) => (
                         <tr>
                           <td key={i.CategoryName}> {i.CategoryName}</td>
-                          <td>
+                          <td onClick={()=>handledelete(i._id)} className="delete">
                             <DeleteForeverOutlinedIcon />
                           </td>
                         </tr>

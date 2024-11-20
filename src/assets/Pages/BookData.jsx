@@ -39,8 +39,8 @@ function BookData() {
               <table>
                 <thead>
                   <tr>
-                    <th>Front Image</th>
-                    <th>Back Image</th>
+                    {/* <th>Front Image</th> */}
+                    {/* <th>Back Image</th> */}
                     <th>Book Name</th>
                     <th>Book Name Guj</th>
                     <th> ISBN</th>
@@ -60,7 +60,7 @@ function BookData() {
                   {booklist &&
                     booklist.map((i) => (
                       <tr>
-                        <td key={i.BookName}>
+                        {/* <td key={i.BookName}>
                           <img
                             className="image"
                             src={i.FrontImage}
@@ -76,7 +76,7 @@ function BookData() {
                             onClick={() => (window.location.href = i.BackImage)}
                             src={i.BackImage}
                           />
-                        </td>
+                        </td> */}
                         <td key={i.BookName}> {i.BookName}</td>
 
                         <td key={i.BookNameGuj}> {i.BookNameGuj}</td>
