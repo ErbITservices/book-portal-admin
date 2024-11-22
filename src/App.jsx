@@ -12,14 +12,43 @@ import {
   BrowserRouter,
 } from "react-router-dom";
 import Userlist from "./assets/Pages/Userlist";
+import AddSubject from "./assets/Pages/AddSubject";
+import Protected from "./assets/Pages/Protected";
 
 function App() {
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/Login" element={<Login title="Login" />} />
-          <Route path="/" element={<Dashboard title="Dashboard" />} />
+          <Route path="/" element={<Protected Components={Login} />}></Route>
+          <Route
+            path="/Dashboard"
+            element={<Protected Components={Dashboard} />}
+          ></Route>
+          <Route
+            path="/AddScheme"
+            element={<Protected Components={AddScheme} />}
+          ></Route>
+          <Route
+            path="/BookData"
+            element={<Protected Components={BookData} />}
+          ></Route>
+          <Route
+            path="/Userlist"
+            element={<Protected Components={Userlist} />}
+          ></Route>
+          <Route
+            path="/AddCategory"
+            element={<Protected Components={AddCategory} />}
+          ></Route>
+          <Route
+            path="/AddSubject"
+            element={<Protected Components={AddSubject} />}
+          ></Route>
+        </Routes>
+
+        {/* <Route path="/" element={<Login title="Login" />} />
+          <Route path="/Dashboard" element={<Dashboard title="Dashboard" />} />
           <Route path="/AddScheme" element={<AddScheme title="AddScheme" />} />
           <Route path="/BookData" element={<BookData title="BookData" />} />
           <Route path="/Userlist" element={<Userlist title="Userlist" />} />
@@ -27,7 +56,11 @@ function App() {
             path="/AddCategory"
             element={<AddCategory title="AddCategory" />}
           />
-        </Routes>
+          <Route
+            path="/AddSubject"
+            element={<AddSubject title="AddSubject" />}
+          /> */}
+        {/* </Routes> */}
       </BrowserRouter>
     </>
   );

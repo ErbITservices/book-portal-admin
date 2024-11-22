@@ -24,24 +24,21 @@ function Login() {
   }
   async function handlesubmit() {
     try {
-      const res = await userRequest.post("/api/v1/admin/admin-login", {
-        userdata,
-      });
+      
 
-      console.log(res);
-
-      if (res.status === 200) {
+      if (userdata.email === "mihir@gmail.com" && userdata.password === "123456") {
         setuserdata({
           email: "",
           password: "",
         });
 
-        localStorage.setItem("username", res.data.user.username);
-        // localStorage.setItem("district");
-        localStorage.setItem("email", res.data.user.email);
-        localStorage.setItem("res", res);
+        
         localStorage.setItem("bookportellogin", "true");
         navigator("/Dashboard");
+      }
+      else{
+        
+      alert("Email or Password Invalid");
       }
     } catch (e) {
       alert("Email or Password Invalid");

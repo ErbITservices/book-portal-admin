@@ -49,7 +49,11 @@ function Slidebar({ hideslidebar }) {
               <CategoryIcon /> Add Category
             </li>
           </Link>
-
+          <Link to="/AddSubject" style={{ textDecoration: "none" }}>
+            <li>
+              <AddOutlinedIcon /> Add Subject
+            </li>
+          </Link>
           <Link to="/AddScheme" style={{ textDecoration: "none" }}>
             <li>
               <AddOutlinedIcon /> Add Scheme
