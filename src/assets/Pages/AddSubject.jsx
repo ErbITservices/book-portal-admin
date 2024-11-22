@@ -6,17 +6,19 @@ import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
 import { userRequest } from "../../axiosReqMethods";
 import DeleteForeverOutlinedIcon from "@mui/icons-material/DeleteForeverOutlined";
 function AddSubject() {
-  const [categorydata, setcategorydata] = useState({ CategoryName: "" });
-  const [categorylist, setcategorylist] = useState();
+  const [Subjectdata, setSubjectdata] = useState({ SubjectName: "" });
+  const [subjectlist, setsubjectlist] = useState();
 
 
 useEffect(() => {
   const dataget = async () => {
     try {
-      const res = await userRequest.get(`/api/v1/CategoryName/getCategoryName`);
-      setcategorylist(res.data.Category);
-      console.log(categorylist);
-      console.log(res.data.Category);
+      const res = await userRequest.get(`/api/v1/subject/getSubject`);
+      setsubjectlist(res.data.Subject
+      );
+      console.log(subjectlist);
+      console.log(res.data.Subject
+      );
     } catch (error) {
       console.log(error);
     }
@@ -27,25 +29,25 @@ useEffect(() => {
   function handleinput(e) {
     const name = e.target.name;
     const value = e.target.value;
-    setcategorydata({ ...categorydata, [name]: value });
-    console.log(categorydata);
+    setSubjectdata({ ...Subjectdata, [name]: value });
+    console.log(Subjectdata);
     
   }
   async function handlesubmit() {
-    const res = await userRequest.post("/api/v1/CategoryName/addCategoryName", {
-      categorydata,
+    const res = await userRequest.post("/api/v1/subject/addSubject", {
+      Subjectdata,
     });
     try {
-      const res = await userRequest.get(`/api/v1/CategoryName/getCategoryName`);
-      setcategorylist(res.data.Category);
-      console.log(categorylist);
-      console.log(res.data.Category);
+      const res = await userRequest.get(`/api/v1/subject/getSubject`);
+      setsubjectlist(res.data.Subject);
+      console.log(subjectlist);
+      console.log(res.data);
     } catch (error) {
       console.log(error);
     }
     if (res.status === 200) {
-      setcategorydata({
-        CategoryName:""
+      setSubjectdata({
+        SubjectName:""
       });
     }
     else {
@@ -54,14 +56,14 @@ useEffect(() => {
   }
   async function handledelete(id) {
     try {
-      const res1 = await userRequest.delete(`/api/v1/CategoryName/deleteCategoryName/${id}`);
-      setcategorylist(res1.data.Category);
+      const res1 = await userRequest.delete(`/api/v1/subject/deleteSubject/${id}`);
+      setsubjectlist(res1.data.Subject);
       
     } catch (error) {
       console.log(error);
     }
-    const res2 = await userRequest.get(`/api/v1/CategoryName/getCategoryName`);
-      setcategorylist(res2.data.Category);
+    const res2 = await userRequest.get(`/api/v1/subject/getSubject`);
+      setsubjectlist(res2.data.Subject);
   }
   return (
     <>
@@ -78,8 +80,8 @@ useEffect(() => {
                   <input
                     className="login-input"
                     type="text"
-                    name="CategoryName"
-                    value={categorydata.CategoryName}
+                    name="SubjectName"
+                    value={Subjectdata.SubjectName}
                     onChange={handleinput}
                   />
                 </div>
@@ -96,9 +98,9 @@ useEffect(() => {
                       </tr>
                     </thead>
                     <tbody>
-                      {categorylist?.map((i) => (
+                      {subjectlist?.map((i) => (
                         <tr>
-                          <td key={i.CategoryName}> {i.CategoryName}</td>
+                          <td key={i.SubjectName}> {i.SubjectName}</td>
                           <td onClick={()=>handledelete(i._id)} className="delete">
                             <DeleteForeverOutlinedIcon />
                           </td>
