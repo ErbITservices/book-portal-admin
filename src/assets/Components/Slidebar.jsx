@@ -11,7 +11,7 @@ import { useRef } from "react";
 import { useState } from "react";
 function Slidebar({ hideslidebar }) {
   const hideref = useRef();
-  const [showbar, setshowbar] = useState(false);
+  const [showbar, setshowbar] = useState(true);
  
 
   function handlehideslidebar() {
@@ -33,8 +33,8 @@ function Slidebar({ hideslidebar }) {
         </div>
       )}
 
-      <div className="slide-bar" ref={hideref}>
-        <div className="close-icon" onClick={handlehideslidebar}>
+      <div className="slide-bar" style={{ display: "none" }} ref={hideref}>
+        <div className="close-icon"  onClick={handlehideslidebar}>
           <CloseIcon />
         </div>
 
