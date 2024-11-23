@@ -27,19 +27,19 @@ function Slidebar({ hideslidebar }) {
   }
   return (
     <>
-      {showbar && (
-        <div className="show-bar" onClick={handleshowslidebar}>
-          <MenuIcon />
-        </div>
-      )}
+      {/* {showbar && (
+        // <div className="show-bar" onClick={handleshowslidebar}>
+        //   <MenuIcon />
+        // </div>
+      )} */}
 
-      <div className="slide-bar" style={{ display: "none" }} ref={hideref}>
-        <div className="close-icon"  onClick={handlehideslidebar}>
+      <div className="slide-bar"  ref={hideref}>
+        {/* <div className="close-icon"  onClick={handlehideslidebar}>
           <CloseIcon />
-        </div>
+        </div> */}
 
         <ul>
-          <Link to="/" style={{ textDecoration: "none" }}>
+          <Link to="/Dashboard" style={{ textDecoration: "none" }}>
             <li>
               <GridViewOutlinedIcon /> Dashboard
             </li>

@@ -21,6 +21,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+  background-color: whitesmoke;
 }
 .input {
   border: 1.5px solid black;
@@ -84,8 +85,8 @@ background: rgba(255, 255, 255, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
 .logo{
-  width: 49%;
-  text-align: start;
+  width: 50%;
+  text-align: end;
   font-weight: 500;
   font-size: 20px;
   margin: 5px;
@@ -97,8 +98,17 @@ background: rgba(255, 255, 255, 0.2);
   width: 50%;
   text-align: end;
   margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
 }
-
+.log-out{
+color: red;
+padding: 5px;
+border-radius: 10px;
+border: 1px solid red;
+margin: 10px;
+}
 /* login */
 .login-container{
   /* background-color: lightcoral; */
@@ -145,7 +155,7 @@ font-size: 40px;
   margin: 20px 0px;
   padding: 10px 30px;
   border-radius: 20px;
-  background-color: #2196F3;
+  background-color: rgb(122, 210, 240);
   border: none;
   display: flex;
   font-size: 20px;
@@ -160,15 +170,23 @@ font-size: 40px;
   justify-content: center;
   /* padding: 20px; */
   gap: 10px;
-  border: 2px solid black;
   width: 600px;
   border-radius: 10px;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(9.5px);
-  -webkit-backdrop-filter: blur(9.5px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.addcategory-container{
+  display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ padding: 20px;
+ gap: 10px;
+ width: 600px;
+ border-radius: 10px;
+ overflow: hidden;
+ background: rgba(255, 255, 255, 0.2);
+ background-color: white;
 }
 .addsheam-inputarea{
   display: flex;
@@ -176,10 +194,22 @@ font-size: 40px;
   justify-content: center;
   width: 100%;
 }
+.addcategory-inputarea{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 85%;
+}
+.addcategory-inputarea label{
+  text-align: center;
+  width: 30%;
+  margin: 0 10px;
+}
 .addsheam-inputarea label{
   text-align: start;
   width: 30%;
 }
+
 .addsheam-container h1{
   margin: 20px 0;
 }
@@ -192,13 +222,13 @@ font-size: 40px;
 }
 .slide-bar{
   height: auto;
-  width: 200px;
+  width: 250px;
   background-color:azure;
-  position: sticky;
+  /* position: sticky; */
   padding: 20px;
   min-height: 650px;
-  z-index: 99;
-  position: absolute;
+  /* z-index: 99; */
+  /* position: absolute; */
 }
 .slide-bar ul{
   list-style: none;
@@ -291,8 +321,9 @@ td{
   font-size: 15px;
 }
 th{
-  background-color: #4ca9f6e2;
+  background-color: rgb(122, 210, 240);
   font-weight: 500;
+  padding: 5px;
   /* border-radius: 5px; */
 }
 table ,td , th{
@@ -300,10 +331,10 @@ table ,td , th{
   border-collapse: collapse;
 }
 .delete{
-  background-color: red;
+  background-color: rgb(254, 50, 50);
 }
 .edit{
-  background-color: green;
+  background-color: rgb(38, 121, 38);
 }
 .image{
   width: 50px;
@@ -320,6 +351,11 @@ table ,td , th{
   overflow: auto;
   min-height: 600px;
 }
+.btn-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .userlist-container h1{
   margin: 20px 0;
 }
@@ -332,6 +368,14 @@ center{
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.addsheam-inputarea select{
+  
+  border: 1.5px solid black;
+ border-radius: 10px;
+ padding: 10px;
+ background: transparent;
+ min-width: 260px;
 }
 @media (max-width: 420px) {
   .footer-container

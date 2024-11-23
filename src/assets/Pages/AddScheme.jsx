@@ -162,7 +162,7 @@ useEffect(() => {
                 <div className="addsheam-inputarea">
                   <label>Scheme Status </label>
                   <select
-                    className="login-input"
+                    className=""
                     onChange={handleinput}
                     value={schemedata.scheam_status}
                     name="scheam_status"

@@ -69,11 +69,11 @@ useEffect(() => {
         <Navbar />
         <div className="dashboard-main-container">
           <Slidebar />
-          <div className="addsheam-container">
+          <div className="container">
             <div className="container">
-              <div className="addsheam-container">
+              <div className="addcategory-container">
                 <h1>Add New Category of Books</h1>
-                <div className="addsheam-inputarea">
+                <div className="addcategory-inputarea">
                   <label>Category Name </label>
                   <input
                     className="login-input"

@@ -1,8 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
 import Slidebar from "../Components/Slidebar";
 import { req } from "../../axiosReqMethods";
+
+import { useDownloadExcel } from "react-export-table-to-excel";
 
 function BookData() {
     const [booklist, setbooklist] = useState();
@@ -11,6 +13,12 @@ function BookData() {
     // //   setbooklist(res);
       // console.log(booklist);
     // }, []);
+    const xls = useRef();
+    const { onDownload } = useDownloadExcel({
+      currentTableRef: xls.current,
+      filename: "Bookdata",
+      sheet: "Users"
+    });
     
     useEffect(() => {
     const dataget = async () => {
@@ -36,14 +44,13 @@ function BookData() {
 
             <div className="userlist-container">
               <h1>All Book List</h1>
-              <table>
+              <table ref={xls}>
                 <thead>
                   <tr>
-                    {/* <th>Front Image</th> */}
-                    {/* <th>Back Image</th> */}
+                   
+                    <th> ISBN</th>
                     <th>Book Name</th>
                     <th>Book Name Guj</th>
-                    <th> ISBN</th>
                     <th> Category</th>
                     <th> Language</th>
                     <th> PublisherName</th>
@@ -60,27 +67,12 @@ function BookData() {
                   {booklist &&
                     booklist.map((i) => (
                       <tr>
-                        {/* <td key={i.BookName}>
-                          <img
-                            className="image"
-                            src={i.FrontImage}
-                            onClick={() =>
-                              (window.location.href = i.FrontImage)
-                            }
-                          />
-                        </td>
-                        <td key={i.BookName}>
-                          {" "}
-                          <img
-                            className="image"
-                            onClick={() => (window.location.href = i.BackImage)}
-                            src={i.BackImage}
-                          />
-                        </td> */}
+                        
+                        
+                        <td key={i.ISBN}> {i.ISBN}</td>
                         <td key={i.BookName}> {i.BookName}</td>
 
                         <td key={i.BookNameGuj}> {i.BookNameGuj}</td>
-                        <td key={i.ISBN}> {i.ISBN}</td>
                         <td key={i.Category}> {i.Category}</td>
                         <td key={i.Language}> {i.Language}</td>
                         <td key={i.PublisherName}> {i.PublisherName}</td>
@@ -95,6 +87,7 @@ function BookData() {
                     ))}
                 </tbody>
               </table>
+              <div className="btn-container"><button className="btn" onClick={onDownload}> Download Xls</button></div>
             </div>
           </div>
 
