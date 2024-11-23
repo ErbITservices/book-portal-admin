@@ -112,7 +112,7 @@ useEffect(() => {
           </div>
         </div>
 
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </>
   );

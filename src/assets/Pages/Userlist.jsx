@@ -57,7 +57,7 @@ function Userlist() {
           </div>
         </div>
 
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </>
   );

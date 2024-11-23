@@ -130,7 +130,7 @@ function BookData() {
           </div>
         </div>
 
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </>
   );

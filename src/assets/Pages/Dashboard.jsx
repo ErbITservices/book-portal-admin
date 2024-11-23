@@ -61,7 +61,7 @@ function Dashboard() {
             </center>
           </div>
 
-          <Footer />
+          {/* <Footer /> */}
         </div>
       </>
     );
