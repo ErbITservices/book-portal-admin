@@ -71,6 +71,7 @@ useEffect(() => {
     } catch (error) {
       console.log(error);
     }
+    setschemelist([]);
     const res2 = await userRequest.get(`/api/v1/scheam/getScheam`);
     setschemelist(res2.data.allScheam);
   }
@@ -91,7 +92,7 @@ useEffect(() => {
       
       setshowedit(false)
     }
-    setschemelist();
+    setschemelist([]);
     const res2 = await userRequest.get(`/api/v1/scheam/getScheam`);
     setschemelist(res2.data.allScheam);
   }
