@@ -76,9 +76,7 @@ function Login() {
               Sign In
             </button>
 
-            <Link to="/Registration">
-              <p>Sign Up</p>
-            </Link>
+            
           </div>
         </div>
 
