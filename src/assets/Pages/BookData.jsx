@@ -105,7 +105,7 @@ function BookData() {
                   booklist.map((i, index) => (
                     <tr>
                       <td key={i.index + 1}> {index + 1}</td>
-                      <td key={i.ISBN}> {i.ISBN}</td>
+                      <td key={i.ISBN}> {Number(i.ISBN)}</td>
                       <td key={i.User_name}> {i.User_name}</td>
                       <td key={i.BookName}> {i.BookName}</td>
                       <td key={i.BookNameGuj}> {i.BookNameGuj}</td>
