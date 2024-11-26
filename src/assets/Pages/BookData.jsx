@@ -75,6 +75,7 @@ function BookData() {
                 <tr>
                   <th> Sr no</th>
                   <th> ISBN</th>
+                  <th> User Name</th>
                   <th> Book Name</th>
                   <th> Book Name (Guj)</th>
                   <th> Author Name</th>
@@ -99,6 +100,7 @@ function BookData() {
                     <tr>
                       <td key={i.index + 1}> {index + 1}</td>
                       <td key={i.ISBN}> {i.ISBN}</td>
+                      <td key={i.User_name}> {i.User_name}</td>
                       <td key={i.BookName}> {i.BookName}</td>
                       <td key={i.BookNameGuj}> {i.BookNameGuj}</td>
                       <td key={i.AuthorName}> {i.AuthorName}</td>
@@ -114,9 +116,7 @@ function BookData() {
                       <td key={i.Subject}> {i.Subject}</td>
                       <td key={i.PubYear}> {i.PubYear}</td>
                       <td key={i.schemename}> {i.schemename}</td>
-                      <td key={i.Discribption
-}> {i.Discribption
-}</td>
+                      <td key={i.Discribption}> {i.Discribption}</td>
                     </tr>
                   ))}
               </tbody>
