@@ -24,9 +24,8 @@ function BookData() {
   useEffect(() => {
     const dataget = async () => {
       try {
-        // const res = await req.get(`/api/v1/bookeEntry/getAllBook`); setbooklist(res.data.bookEntry);
-        console.log(booklist);
-        console.log("mihir");
+        const res = await req.get(`/api/v1/bookeEntry/getAllBook`); setbooklist(res.data.bookEntry);
+        
         const res2 = await req.get(`/api/v1/scheam/getScheam`);
         setschemelist(res2.data.allScheam);
         console.log(res2);
@@ -39,10 +38,17 @@ function BookData() {
   async function handleinput(e) {
     const value = e.target.value;
     setbooklist([]);
-    const res = await req.get(`/api/v1/bookeEntry/getScheamBook/${value}`);
-    console.log(res.data);
+    if (value === "All") {
+      const res2 = await req.get(`/api/v1/bookeEntry/getAllBook`);
+      setbooklist(res2.data.bookEntry);
 
+    }
+    else {
+      const res = await req.get(`/api/v1/bookeEntry/getScheamBook/${value}`);
+      console.log(res.data);
+      
     setbooklist(res.data.bookEntry);
+    }
     // console.log(booklist);
   }
   return (
@@ -63,7 +69,7 @@ function BookData() {
                 type="text"
                 onChange={handleinput}
               >
-                <option value={""}>All</option>
+                <option value={"All"}>All</option>
                 {schemelist &&
                   schemelist.map((i) => (
                     <option key={i.scheam_name}>{i.scheam_name}</option>

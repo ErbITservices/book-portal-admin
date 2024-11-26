@@ -4,6 +4,8 @@ import Navbar from "../Components/Navbar";
 import Slidebar from "../Components/Slidebar";
 import { req } from "../../axiosReqMethods";
 
+import DeleteForeverOutlinedIcon from "@mui/icons-material/DeleteForeverOutlined";
+
 function Userlist() {
   const [userlist, setuserlist] = useState();
   // useEffect(async () => {
@@ -25,6 +27,16 @@ function Userlist() {
     };
     dataget();
   }, []);
+   async function handledelete(id) {
+     try {
+       const res1 = await req.delete(`/api/v1/admin/deleteUser/${id}`);
+     } catch (error) {
+       console.log(error);
+     }
+     setuserlist([]);
+     const res2 = await req.get(`/api/v1/admin/getAllUser`);
+     setuserlist(res2.data.users);
+   }
   return (
     <>
       <div className="dashboard-container">
@@ -40,6 +52,7 @@ function Userlist() {
                   <th>Company Name</th>
                   <th>Email</th>
                   <th>Phone</th>
+                  <th>Delete</th>
                 </tr>
               </thead>
               <tbody>
@@ -50,6 +63,9 @@ function Userlist() {
                     <td key={i.contect_name}> {i.contect_name}</td>
                     <td key={i.email}> {i.email}</td>
                     <td key={i.phone}> {i.phone}</td>
+                    <td onClick={() => handledelete(i._id)} className="delete">
+                      <DeleteForeverOutlinedIcon />
+                    </td>
                   </tr>
                 ))}
               </tbody>

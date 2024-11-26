@@ -26,7 +26,7 @@ function Login() {
     try {
       
 
-      if (userdata.email === "mihir@gmail.com" && userdata.password === "123456") {
+      if (userdata.email === "gpm" && userdata.password === "gpm@2024") {
         setuserdata({
           email: "",
           password: "",
