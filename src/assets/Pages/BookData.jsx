@@ -28,7 +28,7 @@ function BookData() {
         
         const res2 = await req.get(`/api/v1/scheam/getScheam`);
         setschemelist(res2.data.allScheam);
-        console.log(res2);
+        console.log(res1);
       } catch (error) {
         console.log(error);
       }
@@ -41,7 +41,8 @@ function BookData() {
     if (value === "All") {
       const res2 = await req.get(`/api/v1/bookeEntry/getAllBook`);
       setbooklist(res2.data.bookEntry);
-
+      console.log(res2);
+      
     }
     else {
       const res = await req.get(`/api/v1/bookeEntry/getScheamBook/${value}`);
@@ -98,6 +99,7 @@ function BookData() {
                   <th> Pub Year</th>
                   <th> Scheme Name</th>
                   <th> Discription</th>
+                  <th> Time Stamp</th>
                 </tr>
               </thead>
               <tbody>
@@ -123,6 +125,7 @@ function BookData() {
                       <td key={i.PubYear}> {i.PubYear}</td>
                       <td key={i.schemename}> {i.schemename}</td>
                       <td key={i.Discribption}> {i.Discribption}</td>
+                      <td key={i.createdAt}> {i.createdAt}</td>
                     </tr>
                   ))}
               </tbody>
