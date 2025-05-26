@@ -6,7 +6,6 @@ function Protected(props) {
     const navigator = useNavigate();
     let login = localStorage.getItem("bookportellogin");
     useEffect(() => {
-        console.log("protected");
         
         if (login) {
             navigator("/Dashboard");

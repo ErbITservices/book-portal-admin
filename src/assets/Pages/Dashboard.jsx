@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
 import Slidebar from "../Components/Slidebar"
 import BackupTableOutlinedIcon from "@mui/icons-material/BackupTableOutlined";
@@ -19,10 +18,8 @@ function Dashboard() {
         setnumberofscheme(res2.data.allScheam.length);
         const res3 = await req.get(`/api/v1/admin/getAllUser`);
         setnumberofuser(res3.data.users.length);
-        // console.log(numberofbook);
-        console.log("mihir");
       } catch (error) {
-        console.log(error);
+      alert("Somthing Wrong!! Try Again");
       }
     };
     dataget();
@@ -40,7 +37,6 @@ function Dashboard() {
                   <h2>
                     <BackupTableOutlinedIcon />
                     {numberofscheme}
-                    {console.log(numberofscheme)}
                   </h2>
                 </div>
                 <div className="info-cards">
@@ -61,7 +57,6 @@ function Dashboard() {
             </center>
           </div>
 
-          {/* <Footer /> */}
         </div>
       </>
     );

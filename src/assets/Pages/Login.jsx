@@ -20,7 +20,6 @@ function Login() {
       ...userdata,
       [name]: value,
     });
-    console.log(userdata);
   }
   async function handlesubmit() {
     try {

@@ -11,7 +11,6 @@ function Userlist() {
   // useEffect(async () => {
   // //   const res = await userRequest.get("/api/v1/bookeEntry/getAllBook");
   // //   setbooklist(res);
-  // console.log(booklist);
   // }, []);
 
   useEffect(() => {
@@ -19,10 +18,8 @@ function Userlist() {
       try {
         const res = await req.get(`/api/v1/admin/getAllUser`);
         setuserlist(res.data.users);
-        console.log(userlist);
-        console.log(res.data.users);
       } catch (error) {
-        console.log(error);
+        alert("Somthing Wrong!! Try Again");
       }
     };
     dataget();
@@ -31,7 +28,7 @@ function Userlist() {
      try {
        const res1 = await req.delete(`/api/v1/admin/deleteUser/${id}`);
      } catch (error) {
-       console.log(error);
+      alert("Somthing Wrong!! Try Again");
      }
      setuserlist([]);
      const res2 = await req.get(`/api/v1/admin/getAllUser`);

@@ -12,7 +12,6 @@ function BookData() {
   // useEffect(async () => {
   // //   const res = await userRequest.get("/api/v1/bookeEntry/getAllBook");
   // //   setbooklist(res);
-  // console.log(booklist);
   // }, []);
   const xls = useRef();
   const { onDownload } = useDownloadExcel({
@@ -28,9 +27,8 @@ function BookData() {
         
         const res2 = await req.get(`/api/v1/scheam/getScheam`);
         setschemelist(res2.data.allScheam);
-        console.log(res1);
       } catch (error) {
-        console.log(error);
+        alert("Somthing Wrong!! Try Again");
       }
     };
     dataget();
@@ -41,16 +39,13 @@ function BookData() {
     if (value === "All") {
       const res2 = await req.get(`/api/v1/bookeEntry/getAllBook`);
       setbooklist(res2.data.bookEntry);
-      console.log(res2);
       
     }
     else {
       const res = await req.get(`/api/v1/bookeEntry/getScheamBook/${value}`);
-      console.log(res.data);
       
     setbooklist(res.data.bookEntry);
     }
-    // console.log(booklist);
   }
   return (
     <>

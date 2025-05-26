@@ -16,11 +16,9 @@ useEffect(() => {
       const res = await userRequest.get(`/api/v1/subject/getSubject`);
       setsubjectlist(res.data.Subject
       );
-      console.log(subjectlist);
-      console.log(res.data.Subject
-      );
+      
     } catch (error) {
-      console.log(error);
+      alert("Somthing Wrong!! Try Again");
     }
   };
   dataget();
@@ -30,7 +28,6 @@ useEffect(() => {
     const name = e.target.name;
     const value = e.target.value;
     setSubjectdata({ ...Subjectdata, [name]: value });
-    console.log(Subjectdata);
     
   }
   async function handlesubmit() {
@@ -40,10 +37,8 @@ useEffect(() => {
     try {
       const res = await userRequest.get(`/api/v1/subject/getSubject`);
       setsubjectlist(res.data.Subject);
-      console.log(subjectlist);
-      console.log(res.data);
     } catch (error) {
-      console.log(error);
+      alert("Somthing Wrong!! Try Again");
     }
     if (res.status === 200) {
       setSubjectdata({
@@ -60,7 +55,7 @@ useEffect(() => {
       setsubjectlist(res1.data.Subject);
       
     } catch (error) {
-      console.log(error);
+      alert("Somthing Wrong!! Try Again");
     }
     const res2 = await userRequest.get(`/api/v1/subject/getSubject`);
       setsubjectlist(res2.data.Subject);

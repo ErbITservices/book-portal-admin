@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
 import Slidebar from "../Components/Slidebar";
 import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
@@ -24,10 +23,9 @@ useEffect(() => {
     try {
       const res = await userRequest.get(`/api/v1/scheam/getScheam`);
       setschemelist(res.data.allScheam);
-      // console.log(categorylist);
-      console.log(res.data.allScheam);
+      
     } catch (error) {
-      console.log(error);
+      alert("Somthing Wrong!! Try Again");
     }
   };
   dataget();
@@ -36,8 +34,7 @@ useEffect(() => {
   function handleinput(e) {
     const name = e.target.name;
     const value = e.target.value;
-    setschemedata({ ...schemedata, [name]: value })
-    console.log(schemedata);
+    setschemedata({ ...schemedata, [name]: value });
     
   }
   async function handlesubmit() {
@@ -47,10 +44,8 @@ useEffect(() => {
     try {
       const res = await userRequest.get(`/api/v1/scheam/getScheam`);
       setschemelist(res.data.allScheam);
-      // console.log(categorylist);
-      console.log(res.data.allScheam);
     } catch (error) {
-      console.log(error);
+      alert("Somthing Wrong!! Try Again");
     }
     if (res.status === 200) {
       setschemedata({
@@ -66,20 +61,19 @@ useEffect(() => {
   async function handledelete({_id}) {
     try {
       const res1 = await userRequest.delete(`/api/v1/scheam/deleteScheam/${_id}`);
-      // setcategorylist(res1.data.Category);
+      
       
     } catch (error) {
-      console.log(error);
+      alert("Somthing Wrong!! Try Again");
     }
     setschemelist([]);
     const res2 = await userRequest.get(`/api/v1/scheam/getScheam`);
     setschemelist(res2.data.allScheam);
   }
   async function handleedit() {
-    console.log(`/api/v1/scheam/putScheam/${schemedata._id}`);
     
     const res = await userRequest.put(`/api/v1/scheam/putScheam/${schemedata._id}`, {schemedata});
-    console.log(res);
+    
     if (res.status === 200) {
       setschemedata({
         scheam_name: "",
